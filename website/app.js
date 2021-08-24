@@ -7,3 +7,10 @@ let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 const apiKey = "&appid=9424b92c045f11c54f9de89f9147d73d&units=imperial" ;
 //setting url to get the information from openweather map
 const baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=`
+// incase of error input
+const error = document.getElementById('error');
+// function to get the input data
+const generateData = function(){
+    const zip = document.getElementById('zip').value
+    const feeling = document.getElementById('feelings').value
+}
