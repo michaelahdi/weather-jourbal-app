@@ -39,3 +39,16 @@ const generateData = function(){
 // add event listener to get the input data when the user click the button
 document.getElementById('generate').addEventListener('click', generateData);
 
+//get api data by using asynchronous js 
+const getWeatherData = async(zip)=>{
+    // if all data is true apply try 
+    try{
+        const res = await fetch(baseURL + zip + apiKey);
+        // transform the response we get to json 
+        const data = await res.json()
+        return data
+    }// if something wrong apply catch 
+    catch(error){
+        console.log(error)
+    }
+}
