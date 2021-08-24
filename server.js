@@ -21,3 +21,9 @@ app.use(express.static('website'));
 
 
 // Setup Server
+const port = 3000 ;
+app.listen(port, listening);
+//define listening function
+function listening(){
+    console.log(`running on portal : ${port}`);
+}
