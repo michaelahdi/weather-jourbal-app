@@ -7,7 +7,7 @@ let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 const apiKey = "&appid=9424b92c045f11c54f9de89f9147d73d&units=imperial" ;
 //setting url to get the information from openweather map
 const baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=`
-const server = "http://127.0.0.1:3000";
+const server = "http://127.0.0.1:5000";
 //incase of error input
 const error = document.getElementById('error');
 // function to get the input data
@@ -83,9 +83,9 @@ const updatingUI = async ()=>{
 const savedData = await res.json();
 
 document.getElementById("date").innerHTML = savedData.newDate
-document.getElementById("city").innerHTML = savedData.city
+//document.getElementById("city").innerHTML = savedData.city
 document.getElementById("temp").innerHTML = savedData.temp
-document.getElementById("discription").innerHTML = savedData.description
+//document.getElementById("discription").innerHTML = savedData.description
 document.getElementById("content").innerHTML = savedData.feeling
     }catch(error){
         console.log(error)
