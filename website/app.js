@@ -13,4 +13,27 @@ const error = document.getElementById('error');
 const generateData = function(){
     const zip = document.getElementById('zip').value
     const feeling = document.getElementById('feelings').value
+
+    // using promise to get the data
+    getWeatherData(zip).then((data)=>{
+        if(data){
+            const{
+                main : {temp},
+                name : city ,
+                weather : [{description}],
+            } = data
+            const info = {
+                newDate,
+                city,
+                temp : Math.round(temp),
+                description,
+                feeling
+            }
+            postData(server + '/add' + info);
+            updatingUI();
+            document.getElementById('entry').style.opacity = 1;
+        }
+    });
 }
+
+
