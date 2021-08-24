@@ -74,3 +74,18 @@ return newData
         console.log(error);
     }
 }
+// updating UI
+const updatingUI = async ()=>{
+    const res = await fetch(server + '/all');
+    try{
+const savedData = await res.json();
+
+document.getElementById("date").innerHTML = savedData.newDate
+document.getElementById("city").innerHTML = savedData.city
+document.getElementById("temp").innerHTML = savedData.temp
+document.getElementById("discription").innerHTML = savedData.description
+document.getElementById("content").innerHTML = savedData.feeling
+    }catch(error){
+        console.log(error)
+    }
+}
