@@ -30,4 +30,10 @@ function listening(){
 //get route
 app.get('/all', function(req, res){
     res.send(projectData)
-})
+});
+// post route
+app.post('/add',function(req, res){
+    projectData.push(req.body)
+console.log(projectData)
+res.send(projectData)
+});
