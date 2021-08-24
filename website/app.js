@@ -51,4 +51,26 @@ const getWeatherData = async(zip)=>{
     catch(error){
         console.log(error)
     }
+};
+
+// post route to send data
+const postData = async (url = '' , info = {})=>{
+    // fetch function take two parameters the url tobe added and the data tobe added under post method
+    // giving it both headers and body because of post methos
+    const res = await fetch(url,{
+        method : post,
+        headers : {
+            "content-type":"application/json"
+        },
+        body : json.stringify(info),
+    });
+    // if all data correct
+    try{
+        // transform the data returned to json
+const newData = await res.json();
+return newData
+    }//something wrong
+    catch(error){
+        console.log(error);
+    }
 }
