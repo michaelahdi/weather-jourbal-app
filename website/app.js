@@ -7,7 +7,8 @@ let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 const apiKey = "&appid=9424b92c045f11c54f9de89f9147d73d&units=imperial" ;
 //setting url to get the information from openweather map
 const baseURL = `https://api.openweathermap.org/data/2.5/weather?zip=`
-// incase of error input
+const server = "http://127.0.0.1:3000";
+//incase of error input
 const error = document.getElementById('error');
 // function to get the input data
 const generateData = function(){
@@ -29,9 +30,9 @@ const generateData = function(){
                 description,
                 feeling
             }
-            postData(server + '/add' + info);
+            postData( server + '/add' + info);
             updatingUI();
-            document.getElementById('entry').style.opacity = 1;
+            
         }
     });
 }
@@ -58,11 +59,12 @@ const postData = async (url = '' , info = {})=>{
     // fetch function take two parameters the url tobe added and the data tobe added under post method
     // giving it both headers and body because of post methos
     const res = await fetch(url,{
-        method : post,
+        method : 'post' ,
         headers : {
             "content-type":"application/json"
         },
-        body : json.stringify(info),
+        credentials: 'same-origin', 
+        body : JSON.stringify(info),
     });
     // if all data correct
     try{
