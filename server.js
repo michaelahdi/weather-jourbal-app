@@ -27,3 +27,7 @@ app.listen(port, listening);
 function listening(){
     console.log(`running on portal : ${port}`);
 }
+//get route
+app.get('/all', function(req, res){
+    res.send(projectData)
+})
