@@ -36,4 +36,6 @@ const generateData = function(){
     });
 }
 
+// add event listener to get the input data when the user click the button
+document.getElementById('generate').addEventListener('click', generateData);
 
