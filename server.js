@@ -32,8 +32,9 @@ app.get('/all', function(req, res){
     res.send(projectData)
 });
 // post route
-app.post('/add',function(req, res){
-    projectData.push(req.body)
+app.post('/add', postData)
+function postData(req, res){
+    projectData = req.body;
 console.log(projectData)
-res.send(projectData)
-});
+res.status(200).send(projectData);
+};

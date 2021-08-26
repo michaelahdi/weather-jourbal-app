@@ -2,6 +2,9 @@ body{
     background: #fffff8;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
+.newone{
+    position: relative;
+}
 
 #app{
     display: grid;
